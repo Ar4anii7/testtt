@@ -1,54 +1,12 @@
-<!-- user.html -->  
 <!DOCTYPE html>  
 <html lang="fa">  
 <head>  
     <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Register User</title>  
+    <title>User Info</title>  
+   
 </head>  
 <body>  
-    <form id="user-form">  
-        <input type="text" id="name" name="name" placeholder="نام" required>  
-        <input type="email" id="email" name="email" placeholder="ایمیل" required>  
-        <input type="password" id="password" name="password" placeholder="رمز عبور" required>  
-        <button type="submit">ارسال</button>  
-    </form>  
-
-    <script>  
-        // به فرم با id 'user-form' یک event listener اضافه می‌کند که هنگام ارسال فرم اجرا می‌شود  
-        document.getElementById('user-form').addEventListener('submit', function(event) {  
-            
-            // جلوگیری از رفتار پیش‌فرض ارسال فرم (یعنی بارگذاری مجدد صفحه)  
-            event.preventDefault();  
     
-            // داده‌های فرم را از طریق FormData جمع‌آوری می‌کند  
-            const formData = new FormData(event.target);  
-            
-            // داده‌های ورودی فرم را استخراج می‌کند  
-            // 'name' از input نام کاربر  
-            const name = formData.get('name');  
-            // 'email' از input ایمیل کاربر  
-            const email = formData.get('email');  
-            // 'password' از input رمز عبور کاربر  
-            const password = formData.get('password');  
-    
-            // ارسال داده‌ها به آدرس '/user' با استفاده از متد POST  
-            fetch('/user', {  
-                method: 'POST',  // نوع درخواست  
-                headers: { 'Content-Type': 'application/json' },  // نوع محتوا که JSON است  
-                // داده‌ها به فرمت JSON تبدیل و در بدنه درخواست ارسال می‌شوند  
-                body: JSON.stringify({ name, email, password })  
-            })  
-            // در صورت موفقیت، پاسخ را به‌صورت متن دریافت می‌کند  
-            .then(response => response.text())  
-            // نتیجه دریافتی را به کاربر نمایش می‌دهد  
-            .then(result => alert(result))  
-            // در صورت بروز خطا، آن را در کنسول ثبت می‌کند  
-            .catch(error => console.error('Error:', error));  
-        });  
-    </script> 
-    
-    
-    
+   
 </body>  
 </html>
